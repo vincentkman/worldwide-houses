@@ -1,0 +1,15 @@
+@import './Utilities/Mixins'; 
+@import './Utilities/Variables';
+@import './Utilities/Extends';
+
+* {
+    // margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto';
+    background: $white;
+    color: $black;
+}

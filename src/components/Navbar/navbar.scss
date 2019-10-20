@@ -1,0 +1,39 @@
+@import '../../utilities/mixins'; 
+@import '../../utilities/variables';
+@import '../../utilities/extends';
+
+.navbar {
+    background: $light-black;
+    align-items: center;
+    @include grid($temp-col: 50% 1fr);
+     &-logo {
+         width: 220px;
+     }
+     &-links {
+         font-weight: $font-weight--bold;
+         list-style-type: none;
+         @include grid($temp-col: repeat(2, 1fr));
+         &-link {
+            padding: 0 20px; 
+            text-decoration: none;
+            font-size: 20px;
+            @extend %house-transition;
+            color: $grey;
+            &:hover {
+                color: $strong-blue;
+             }
+         }
+         &-active {
+             color: $strong-blue;
+         }
+     }
+}
+
+.icon {
+    @include mq('small') {
+        display: none;
+    }
+    @include mq('medium') {
+        display: inline-block;
+    }
+}

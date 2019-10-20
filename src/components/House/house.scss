@@ -1,0 +1,54 @@
+@import '../../utilities/mixins'; 
+@import '../../utilities/variables';
+@import '../../utilities/extends';
+
+.house {
+    border-color: $black;
+    background: $light-yellow;
+    margin: 30px 0;
+    @include mq('medium') {
+        @include grid($temp-col: 2fr 3fr);
+    }
+    &-container {
+        border-left: 5px solid $strong-blue;
+        border-top: 5px solid $strong-blue;
+        border-bottom: 5px solid $strong-blue;
+        position: relative;
+        &-images {
+            width: 100%;
+            display: block;
+            &:hover {
+                @extend %mouseover;
+                @extend %box-shadow;
+            }
+        }
+        &-close-btn {
+            font-size: 30px;
+            cursor: pointer;
+            @extend %trn;
+            @include apos($top: 5%, $right: 5%);
+            display: block;
+            color: $strong-blue;
+            @extend %house-transition;
+        }
+
+        &:hover .house-container-close-btn {
+            opacity: 1;
+        }
+    }
+    &-detail {
+        border: $br--default solid $strong-blue;
+        padding: 20px 10px;
+        &-title {
+            color: $strong-blue;
+        }
+        &-block{
+           span {
+               margin: 10px;
+               cursor: pointer;
+               color: $strong-blue;
+               font-size: 20px;
+           }
+        }
+    }
+}
