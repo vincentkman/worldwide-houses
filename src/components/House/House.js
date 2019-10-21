@@ -18,8 +18,12 @@ class House extends React.Component {
 
     render() {
         let { id, country, img, description } = this.props.house;
+        let expandDetail = (detail) => {
+            return detail === true ? <p>{description}</p> : null
+        }
+
         return (
-            <div className='house'>
+            <div id='home' className='house'>
                 <div className='house-container'>
                     <img src={img} alt='World Houses' className='house-container-images' />
                     <span onClick={() => this.props.deleteHouse(id)} className='house-container-close-btn'>
@@ -34,7 +38,9 @@ class House extends React.Component {
                             <i className='fas fa-caret-square-down' />
                         </span>
                     </h3>
-                    {this.state.detail && <p>{description}</p>}
+                    {
+                        expandDetail(this.state.detail)
+                    }
                 </div>
             </div>
         );

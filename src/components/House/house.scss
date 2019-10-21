@@ -3,17 +3,20 @@
 @import '../../utilities/extends';
 
 .house {
-    border-color: $black;
     background: $light-yellow;
     margin: 30px 0;
     @include mq('medium') {
         @include grid($temp-col: 2fr 3fr);
     }
     &-container {
-        border-left: 5px solid $strong-blue;
-        border-top: 5px solid $strong-blue;
-        border-bottom: 5px solid $strong-blue;
+        border-top: $br--house;
+        border-left: $br--house;
+        border-right: $br--house;
         position: relative;
+        @include mq('medium') {
+            border-right: none;
+            border-bottom: $br--house;
+        }
         &-images {
             width: 100%;
             display: block;
@@ -23,12 +26,10 @@
             }
         }
         &-close-btn {
-            font-size: 30px;
-            cursor: pointer;
+            @extend %house-btn;
             @extend %trn;
             @include apos($top: 5%, $right: 5%);
             display: block;
-            color: $strong-blue;
             @extend %house-transition;
         }
 
@@ -37,7 +38,7 @@
         }
     }
     &-detail {
-        border: $br--default solid $strong-blue;
+        border: $br--house;
         padding: 20px 10px;
         &-title {
             color: $strong-blue;
@@ -45,9 +46,7 @@
         &-block{
            span {
                margin: 10px;
-               cursor: pointer;
-               color: $strong-blue;
-               font-size: 20px;
+               @extend %house-btn;
            }
         }
     }

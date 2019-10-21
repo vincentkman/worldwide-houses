@@ -7,9 +7,9 @@ function Navbar() {
         <nav className='navbar'>
             <img src={logo} className='navbar-logo' alt='logo' />
             <ul className='navbar-links'>
-                <li><a href='/' className='navbar-links-link '>
+                <li><a href='/home' className='navbar-links-link '>
                     <i className='fas fa-home fa-1x icon' />HOME</a></li>
-                <li><a href='/' className='navbar-links-link navbar-links-active'>
+                <li><a href='/home' className='navbar-links-link navbar-links-active'>
                     <i className='fas fa-home fa-1x icon' />HOUSES</a></li>
             </ul>
         </nav>

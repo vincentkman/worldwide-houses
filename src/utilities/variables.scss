@@ -53,9 +53,10 @@ $base__font-size   : 40px;
 $base__line        : 24px;
 $letter-space      : 2px;
 
-// Border Radius
-$br--default       : 5px;
+// Border 
+$br--default       : 2px;
 $br--round         : 50%;
+$br--house         : $br--default solid $light-black;
 
 // Transitions
 $trns-duration     : .2s;
